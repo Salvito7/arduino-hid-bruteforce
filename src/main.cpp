@@ -4,26 +4,28 @@
 
 #define OLED_SCL 5
 #define OLED_SDA 6
-#define LED_PIN 17 //17 = internal led on the sparkfun pro micro
+#define LED_PIN 17 //17 = rx led on the sparkfun pro micro
 #define BUTTON_PIN 2
 #define RESISTOR_INPUT A0
 #define TOLERANCE 10  //if the sensorValue changes more than sensorHigh + tolerance then the screen has been changed  
-#define COOLDOWN 5500 //the delay between the pin-code inputs 
+#define COOLDOWN 5500 //the ms delay between the pin-code inputs 
 
-
+//supported display list: https://github.com/olikraus/u8g2/wiki/u8g2setupcpp
 U8G2_SSD1306_128X64_NONAME_F_SW_I2C u8g2(U8G2_R0, OLED_SCL, OLED_SDA, U8X8_PIN_NONE);
-int sensorValue;
-// variable to calibrate low value
-int sensorLow = 1023;
-// variable to calibrate high value
-int sensorHigh = 0;
 
-bool debug,isPaused = false;
-
-int s1 = 1;
-int s2 = 4;
-int s3 = 7;
+//if you already know a few digits you can type them in here as starting values  
+//s1 being the first digit to be typed
+int s1 = 0;
+int s2 = 0;
+int s3 = 0;
 int s4 = 0; 
+
+bool debug = false;
+
+bool isPaused = false;
+int sensorValue;
+int sensorLow = 1023;
+int sensorHigh = 0;
 
 void printDebug() {
   String lightmax = "sensorHigh: " + (String)sensorHigh;	
