@@ -26,20 +26,25 @@ This is a simple bruteforcer to crack a 4-digit combination from any mobile devi
 
 ## Step 1: Wiring and setup
 With a **Sparkfun Pro Micro** a **SSD1306 128x64 OLED** display and **default sketch pins** the wiring should look something like this.
-![arduinoHIDbruteforce_bb](https://github.com/Salvito7/arduino-hid-bruteforce/assets/84077475/fb69dd02-d872-4816-a93e-011ca08c75e2)
+
+<img src="https://github.com/Salvito7/arduino-hid-bruteforce/assets/84077475/fb69dd02-d872-4816-a93e-011ca08c75e2" width="70%">
 
 (the photoresistor is missing in the picture below)
-![IMG_20240219_021509](https://github.com/Salvito7/arduino-hid-bruteforce/assets/84077475/ed34c701-aa2c-4f19-903d-a921ef5675cd)
+
+<img src="https://github.com/Salvito7/arduino-hid-bruteforce/assets/84077475/dda26518-c769-4df3-bce4-f2c83b43f148" width="60%">
 
 The photoresistor should ideally only receive light from the screen so you should cover it in black electrical tape and stick it to the phone screen.
-Example of how to isolate the photoresistor with two stripes of electrical tape
-![IMG_20240219_011143](https://github.com/Salvito7/arduino-hid-bruteforce/assets/84077475/59d06670-4f8e-450b-904c-4e57c8729aff)
-![IMG_20240219_011133](https://github.com/Salvito7/arduino-hid-bruteforce/assets/84077475/45005beb-7991-4373-84cf-87abb121769c)
+Example of how to isolate the photoresistor with two stripes of electrical tape.
+
+<img src="https://github.com/Salvito7/arduino-hid-bruteforce/assets/84077475/59d06670-4f8e-450b-904c-4e57c8729aff" width="30%">
+<img src="https://github.com/Salvito7/arduino-hid-bruteforce/assets/84077475/45005beb-7991-4373-84cf-87abb121769c" width="30%">
 
 Pick a location on the phone screen where the brightness doesn't change when the bruteforce is running.
 
 Finished setup:
-![IMG_20240219_165428](https://github.com/Salvito7/arduino-hid-bruteforce/assets/84077475/2f474c40-f286-42f3-9bbd-0f0c43c93225)
+
+<img src="https://github.com/Salvito7/arduino-hid-bruteforce/assets/84077475/2f474c40-f286-42f3-9bbd-0f0c43c93225" width="60%">
+
 
 ## Step 2: Configure the sketch
 There are a number of options to adapt the sketch to your needs.
@@ -49,7 +54,7 @@ There are a number of options to adapt the sketch to your needs.
  - `BUTTON_PIN` - Button-pin (used for enabling debugging and pausing the bruteforce)
  - `RESISTOR_INPUT` -  Photoresistor input-pin
  - `TOLERANCE` - Tolerance value for detecting a screen change (don't set it too low)
- - `COOLDOWN` - Delay between bruteforce inputs
+ - `COOLDOWN` - Delay in ms between bruteforce inputs
 
 > *To change the display type please consult the list below and change
 > the code accordingly: [supported displays](https://github.com/olikraus/u8g2/wiki/u8g2setupcpp)*

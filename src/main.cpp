@@ -67,17 +67,19 @@ void calibrateSensor() {
 
   while(analogRead(RESISTOR_INPUT) <= 5 || analogRead(RESISTOR_INPUT) >= 1010) {
     Serial.println("Sensor Value: " + (String)analogRead(RESISTOR_INPUT) + " -> turn on the screen / check wiring");
-    pause("Sensor: "+ (String)analogRead(RESISTOR_INPUT) + "  no screen check wiring");
+    pause("Sensor: "+ (String)analogRead(RESISTOR_INPUT) + "            no screen check wiring");
   }
   // calibrate for the first five seconds after program runs
   Serial.println("Calibrating sensor");
   u8g2.clearBuffer();
   u8g2.drawStr(0,10, "Calibrating 6sec");
-  u8g2.drawStr(0,60,"Press button for debug");
+  u8g2.drawStr(0,60,"Press for debug");
   unsigned long currentMillis = millis();
   while (millis() < (currentMillis + 6000)) {
     if (digitalRead(BUTTON_PIN) == LOW){
+      u8g2.clearBuffer();
       debug = true;
+      u8g2.drawStr(0,10, "Calibrating 6sec");
       u8g2.drawStr(0,60, "Debug enabled");
       Serial.println("Debug enabled");
     }
