@@ -40,7 +40,7 @@ void pause(String reason) {
   u8g2.clearBuffer();
   if (debug)  printDebug();
   u8g2.drawStr(0,20, "Bruteforcing Paused");
-    if(reason.length() >= 21) {   //21 = max string lenght on display (with a 6px wide font)
+  if(reason.length() >= 21) {   //21 = max string lenght on display (with a 6px wide font)
     String text1 = reason.substring(0,21);
     String text2 = reason.substring(21);
     u8g2.drawStr(0,40, text1.c_str());
@@ -50,12 +50,12 @@ void pause(String reason) {
   }
   u8g2.sendBuffer();
   unsigned long currentMillis = millis();
-    while (millis() < (currentMillis + 500)) {
-      digitalWrite(LED_PIN, HIGH);
-      delay(250);
-      digitalWrite(LED_PIN, LOW);
-      delay(250);
-    }
+  while (millis() < (currentMillis + 500)) {
+    digitalWrite(LED_PIN, HIGH);
+    delay(250);
+    digitalWrite(LED_PIN, LOW);
+    delay(250);
+  }
   if(digitalRead(BUTTON_PIN) == LOW && isPaused) {
     isPaused = false;
     Serial.println("Button pressed -> Bruteforcing resumed");
@@ -69,7 +69,7 @@ void calibrateSensor() {
     Serial.println("Sensor Value: " + (String)analogRead(RESISTOR_INPUT) + " -> turn on the screen / check wiring");
     pause("Sensor: "+ (String)analogRead(RESISTOR_INPUT) + "            no screen check wiring");
   }
-  // calibrate for the first five seconds after program runs
+  // calibrate for the first six seconds after program runs
   Serial.println("Calibrating sensor");
   u8g2.clearBuffer();
   u8g2.drawStr(0,10, "Calibrating 6sec");
@@ -114,7 +114,7 @@ bool checkIfUnlocked() {
     Serial.println("Screen on -> Bruteforcing resumed");
   }
 
-  //if sensorValue is more than sensorHigh + tolerance off the max then it means that the screen has changed
+  //if sensorValue is more than sensorHigh + tolerance then it means that the screen has changed
   if(sensorValue > sensorHigh + TOLERANCE) {
     return true;
   } else {
@@ -132,7 +132,7 @@ void setup() {
   u8g2.clearBuffer();					// clear the internal memory
   u8g2.setFont(u8g2_font_6x10_tf);	// choose a suitable font
 
-  // Start Keyboard and Mouse
+  // Start Keyboard
   Keyboard.begin();
   delay(2000);
 
@@ -173,7 +173,7 @@ void setup() {
     delay(100);
     digitalWrite(LED_PIN, HIGH);
     unsigned long currentMillis = millis();
-    while (millis() <= (currentMillis + COOLDOWN)) { //wait x ms for code to be checked by system
+    while (millis() <= (currentMillis + COOLDOWN)) { //wait x ms for code to be checked by the device
 
       if (debug)  {
         printDebug();
