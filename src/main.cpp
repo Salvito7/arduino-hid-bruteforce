@@ -21,8 +21,12 @@ int s3 = 0;
 int s4 = 0; 
 
 bool debug = false;
-
 bool isPaused = false;
+
+
+
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 int sensorValue;
 int sensorLow = 1023;
 int sensorHigh = 0;
@@ -40,7 +44,7 @@ void pause(String reason) {
   u8g2.clearBuffer();
   if (debug)  printDebug();
   u8g2.drawStr(0,20, "Bruteforcing Paused");
-  if(reason.length() >= 21) {   //21 = max string lenght on display (with a 6px wide font)
+  if(reason.length() >= 21) {   //21 = max string lenght on a 128 wide display (with a 6px wide font)
     String text1 = reason.substring(0,21);
     String text2 = reason.substring(21);
     u8g2.drawStr(0,40, text1.c_str());
@@ -64,6 +68,11 @@ void pause(String reason) {
 
 void calibrateSensor() {
   digitalWrite(LED_PIN, LOW);
+
+  if(isPaused) {
+    Serial.println("Bruteforcing paused -> calibrating sensor");
+    pause("");
+  }
 
   while(analogRead(RESISTOR_INPUT) <= 5 || analogRead(RESISTOR_INPUT) >= 1010) {
     Serial.println("Sensor Value: " + (String)analogRead(RESISTOR_INPUT) + " -> turn on the screen / check wiring");
@@ -125,7 +134,7 @@ bool checkIfUnlocked() {
 
 void setup() {
   Serial.begin(115200);
-  pinMode(LED_BUILTIN_TX,INPUT); //disable the tx led 
+  pinMode(LED_BUILTIN_TX,INPUT); //disable the tx led to avoid confusion
   pinMode(BUTTON_PIN, INPUT_PULLUP);
   pinMode(LED_PIN,OUTPUT);
   u8g2.begin();
