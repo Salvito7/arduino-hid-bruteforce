@@ -48,6 +48,7 @@ With a **Sparkfun Pro Micro** a **SSD1306 128x64 OLED** display and **default pi
 <img src="https://github.com/Salvito7/arduino-hid-bruteforce/assets/84077475/dda26518-c769-4df3-bce4-f2c83b43f148" width="60%">
 
 The photoresistor should ideally only receive light from the screen so you should cover it in black electrical tape and stick it to the phone screen. (Hint: see step 5 for checking the resistor value)
+
 Example of how to isolate the photoresistor with two stripes of electrical tape.
 
 <img src="https://github.com/Salvito7/arduino-hid-bruteforce/assets/84077475/59d06670-4f8e-450b-904c-4e57c8729aff" width="30%">
