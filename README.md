@@ -105,4 +105,5 @@ Depending on the cooldown it should take **10 - 15 hours max.** to try all combi
  - The ideal screen-off value should be 0.
 
 ## Donating
-Buy me a coffee: [Ko-Fi](https://ko-fi.com/salvito)
+If you want, you can support me here: 
+- [Ko-Fi](https://ko-fi.com/salvito)
