@@ -103,3 +103,6 @@ Depending on the cooldown it should take **10 - 15 hours max.** to try all combi
  - If you only want to see if the photoresistor is setup correctly you should set both `debug` and `isPaused` to `true`, so that it pauses right at the beginning. 
  - The debug option displays the current light value that is received by the photoresistor and it helps to check if the photoresistor only receives light from the screen and no other external sources. 
  - The ideal screen-off value should be 0.
+
+## Donating
+Buy me a coffee: [Ko-Fi](https://ko-fi.com/salvito)
