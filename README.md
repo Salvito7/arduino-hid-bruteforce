@@ -9,7 +9,7 @@ This is a simple bruteforcer to crack a 4-digit combination from any mobile devi
 
 
 ## Features
-- OLED display support (U8g2 library)
+- OLED display support (u8g2 library)
 - LED indicator 
 - Pause button
 - Known digits support 
@@ -27,7 +27,7 @@ This is a simple bruteforcer to crack a 4-digit combination from any mobile devi
  - Button (optional)
 
 **If you're using an iOS device you'll also need this:**
- - [Lightning to USB camera adapter](https://www.google.com/search?client=firefox-b-d&sca_esv=1d62dda5da21c497&sxsrf=ACQVn0_xONjj_cMm4ss9vU0iZtXojZ4Syw:1714328852593&q=lightning+to+usb+camera+adapter&uds=AMwkrPvKaOdnm-vCf69yIgBm8GfbjMrrL16yzGvU-bBv_5svSVb46wGFPEvATQ83r8Dtlc681AjioBGC27pV3yppQ13-ce-tYKPDpJzy3gr3FM-6jugZWyePnlLOAIA_AVplKmZYO8I3gM_Hon8ZREYmJT0d_TBuTeet6WNWOr6vqAb7kzH1DqPpWyM0V4cCzekXgDA93hWGkyfDhz2DAGB7ISkuFrZuVpI6A1241qQIT64n6o1DE26GP6i7BI8mu9BFYc0V1QF2ZgN838BTska7Dsm4i96IQ0h1Rs_37r1GBt07P2cLm07NyetbXM1Sc1wVD0ACNREO&udm=2&prmd=ivnbz&sa=X&ved=2ahUKEwjDsqXSxOWFAxX1iv0HHQmIATUQtKgLegQICRAB&biw=1920&bih=927&dpr=1#vhid=sTR9U29yi6YpsM&vssid=mosaic) (Make sure you get the one with the extra lightning port for power input, as some iOS devices can't power the board via OTG alone + you can charge your device while bruteforcing) 
+ - [Lightning to USB camera adapter](https://www.google.com/search?q=lightning+to+usb+camera+adapter&vssid=mosaic) (Make sure you get the one with the extra lightning port for power input,as some iOS devices can't power the board via OTG alone + you can charge your device while bruteforcing) 
 
 
 
@@ -35,7 +35,7 @@ This is a simple bruteforcer to crack a 4-digit combination from any mobile devi
 > *I tested the sketch on the **Arduino Leonardo / Sparkfun Pro Micro**
 > with a **SSD1306 128x64 OLED display**. 
 > For any other board you have to change the board type and platform in
-> the PlatformIO settings and maybe the button and OLED pins.*
+> the Platformio.ini file and maybe the button and OLED pins.*
   
 
 ## Step 1: Wiring and setup
