@@ -134,7 +134,7 @@ bool checkIfUnlocked() {
 
 void setup() {
   Serial.begin(115200);
-  pinMode(LED_BUILTIN_TX,INPUT); //disable the tx led to avoid confusion
+  pinMode(LED_BUILTIN_TX,INPUT); //disable the tx led to avoid confusion with the status LED
   pinMode(BUTTON_PIN, INPUT_PULLUP);
   pinMode(LED_PIN,OUTPUT);
   u8g2.begin();
